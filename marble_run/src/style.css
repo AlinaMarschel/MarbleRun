@@ -10,10 +10,20 @@ body
     overflow: hidden;
 }
 
+.gui-container {
+    position: absolute;
+    height: 100vh;
+    width: 20%;
+    background-color: beige;
+    z-index: 100;
+}
+
 .webgl
 {
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
+    z-index: 10;
 }
+
