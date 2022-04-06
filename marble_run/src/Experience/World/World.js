@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import Experience from "../Experience";
+import Experience from "../Experience.js";
+import Marble from './Marble.js';
 
 
 export default class World 
@@ -8,26 +9,28 @@ export default class World
     {
         this.experience = new Experience()
         this.scene = this.experience.scene
+        this.marble = new Marble
 
-        const sphere = new THREE.Mesh(
-            new THREE.SphereGeometry( 1, 32, 16 ),
-            new THREE.MeshBasicMaterial({color: 0xffff00})
-        )
+        // const sphere = new THREE.Mesh(
+        //     new THREE.SphereGeometry( 0.5, 32, 16 ),
+        //     new THREE.MeshBasicMaterial({color: 0xffff00})
+        // )
 
         // const sphereSecond = new THREE.Mesh(
         //     new THREE.SphereGeometry( 1, 32, 16 ),
         //     new THREE.MeshBasicMaterial({color: 0xffff00})
         // )
 
-        const box = new THREE.Mesh(
-            new THREE.BoxGeometry(10,1,1),
-            new THREE.MeshBasicMaterial({color: 0xff25ab})
-        )
+        // const box = new THREE.Mesh(
+        //     new THREE.BoxGeometry(10,1,1),
+        //     new THREE.MeshBasicMaterial({color: 0xff25ab})
+        // )
 
-        box.position.z = 2
-        box.rotation.y = -.15
+        // box.position.z = 2
+        // box.rotation.y = -.15
 
-        this.scene.add(sphere,box)
+        // this.scene.add(sphere,box)
 
+        this.marble.createSphere()
     }
 }

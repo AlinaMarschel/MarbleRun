@@ -8,20 +8,43 @@ export default class Marble
         this.experience = new Experience()
         this.scene = this.experience.scene
 
-        let color = this.color
-        let size = this.size
-        let weight = this.weight
-        let velocity = this.velocity
+        // let color = this.color
+        // let radius = this.radius
+        // let weight = this.weight
+        // let velocity = this.velocity
+
+        this.color = {color: 0xffff00}
+        this.radius = 1
+        this.mass = 5
+        this.velocity = 2
+        this.startPositionX = 1
+        this.startPositionZ = 3
+
+        this.sphere = new THREE.Mesh()
 
     }
 
-    createSphere(color, size, weight, velocity)
+
+    createSphere()
     {
-        
+        this.sphere = new THREE.Mesh(
+            new THREE.SphereGeometry( this.radius, 32, 16 ),
+            new THREE.MeshBasicMaterial(this.color)
+        )
+
+        this.sphere.position.x = this.startPositionX
+        this.sphere.position.z = this.startPositionZ
+
+        this.onClick()
     }
 
-    addSphere()
+    onClick()
     {
-        this.scene.add()
+        const button = document.querySelector('.create_marble')
+
+        button.addEventListener('click', () => {
+            this.scene.add(this.sphere)
+            console.log(this.sphere)
+        })
     }
 }
