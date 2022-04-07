@@ -1,50 +1,53 @@
 import * as THREE from 'three'
-import Experience from "../Experience";
+import Experience from "../Experience.js";
 
-export default class Marble 
-{
-    constructor()
-    {
+export default class Marble {
+    constructor() {
         this.experience = new Experience()
         this.scene = this.experience.scene
 
-        // let color = this.color
-        // let radius = this.radius
-        // let weight = this.weight
-        // let velocity = this.velocity
-
-        this.color = {color: 0xffff00}
+        // Marble Settings
+        this.color = { color: 0xffff00 }
         this.radius = 1
         this.mass = 5
-        this.velocity = 2
-        this.startPositionX = 1
-        this.startPositionZ = 3
+        this.velocity = 0.98
+        this.startPositionX = 0
+        this.startPositionY = 3
 
         this.sphere = new THREE.Mesh()
 
+        this.marbleArray = []
+        this.onClick()
+        this.update()
     }
 
-
-    createSphere()
-    {
-        this.sphere = new THREE.Mesh(
-            new THREE.SphereGeometry( this.radius, 32, 16 ),
+    createSphere() {
+        let sphere = new THREE.Mesh(
+            new THREE.SphereGeometry(this.radius, 32, 16),
             new THREE.MeshBasicMaterial(this.color)
         )
 
-        this.sphere.position.x = this.startPositionX
-        this.sphere.position.z = this.startPositionZ
+        sphere.position.x = this.startPositionX
+        sphere.position.y = this.startPositionY
 
-        this.onClick()
+        this.marbleArray.push(sphere)
+        this.scene.add(sphere)
     }
 
-    onClick()
-    {
+    onClick() {
         const button = document.querySelector('.create_marble')
 
         button.addEventListener('click', () => {
-            this.scene.add(this.sphere)
-            console.log(this.sphere)
+            this.createSphere()
         })
     }
+
+    update() {
+        for (let item of this.marbleArray) {
+            if (item.position.y > -10)
+                item.position.y -= this.velocity
+        }
+    }
 }
+
+
