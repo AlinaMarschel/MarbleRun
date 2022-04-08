@@ -36,7 +36,11 @@ export default class Marble {
     }
 
     update() {
-        this.marbleArray.forEach((marble) => marble.update())
+        for (let item of this.marbleArray) {
+            item.position.y -= this.velocity
+            console.log(item.position.y)
+        }
+        console.log('hallo??')
     }
 }
 
