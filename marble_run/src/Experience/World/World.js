@@ -25,7 +25,6 @@ export default class World {
         button.addEventListener('click', () => {
             let marble = new Marble()
             this.marbleArray.push(marble)
-            this.marbleArray.forEach((marble) => marble.update())
             console.log(this.marbleArray)
         })
 
@@ -40,6 +39,7 @@ export default class World {
     update() {
         if(this.marble)
             this.marble.update()
+            this.marbleArray.forEach((marble) => marble.update())
     }
 
 
