@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VC2 Marble Run - Pia Starzinski & Alina Marschel</title>
 </head>
+
 <body>
     <div class="gui-container">
         <div class="inner-gui-container">
-        <button type="submit" id="murmelerstellen" class="create_marble">Murmel erstellen</button>
+            <button type="submit" id="murmelerstellen" class="create_marble">Murmel erstellen</button>
             <div>
                 <input type="range" min="1" max="10" value="5" id="slider">
                 <p>Größe: <span id="SelectValue"></span></p>
-                    <div id="selector">
-                        <!-- <div class="SelectBtn"></div> -->
-                        <div ></div>
-                    </div>
+                <div id="selector">
+                    <!-- <div class="SelectBtn"></div> -->
+                    <div></div>
                 </div>
-        <button type="submit" id="start" >Start</button>
-        <button type="submit" id="stop" >Stop</button>
+            </div>
+            <button type="submit" id="start">Start</button>
+            <button type="submit" id="stop">Stop</button>
+
+            <div class="position-value">
+                <p>X-Position:  <span id="SelectValue"></span></p>
+                <input type="text" id="positionx">
+            </div>
+            <div class="position-value">
+                <p>Y-Position:  <span id="SelectValue"></span></p>
+                <input type="text" id="positiony">
+            </div>
         </div>
     </div>
     <canvas class="webgl"></canvas>
 </body>
+
 </html>
