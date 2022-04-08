@@ -7,6 +7,7 @@
 html,
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
     overflow: hidden;
 }
 
@@ -16,10 +17,11 @@ body {
     width: 20%;
     background-color: beige;
     z-index: 100;
+    line-height: 200%
 }
 
 .inner-gui-container {
-    margin:10px ;
+    margin-left: 20px ;
 }
 .webgl {
     position: fixed;
@@ -33,6 +35,12 @@ body {
     width: 50%;
 }
 
+#start {
+    width: 50%;
+}
+#stop {
+    width: 50%;
+}
 #slider {
     width: 50%;
     height: 7px;
@@ -60,7 +68,7 @@ body {
     position: absolute;
 } */
 
-#SelectValue {
+/* #SelectValue {
     width: 48px;
     height: 48px;
     top: 0;
@@ -68,6 +76,6 @@ body {
     border-radius: 4px;
     text-align: center;
     line-height: 45px;
-    font-size: 20px;
+    
     font-weight: bold;
-}
+} */
