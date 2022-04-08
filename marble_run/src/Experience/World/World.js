@@ -10,11 +10,37 @@ export default class World {
         this.resources.on('ready', () => {
             this.marble = new Marble()
             this.marble.createSphere()
+            this.marble.marbleArray
         })
+
+        this.marble = new Marble()
+        this.marbleArray = []
+        this.onClick()
+    }
+
+
+    onClick() {
+        const button = document.querySelector('.create_marble')
+
+        button.addEventListener('click', () => {
+            let marble = new Marble()
+            this.marbleArray.push(marble)
+            this.marbleArray.forEach((marble) => marble.update())
+            console.log(this.marbleArray)
+        })
+
+        // button.addEventListener('click', () => {
+        //     let marble = new Marble()
+        //     this.marbleArray.push(marble)
+        //     console.log('Hi')
+        //     console.log(this.marbleArray)
+        // })
     }
 
     update() {
-        if (this.marble)
+        if(this.marble)
             this.marble.update()
     }
+
+
 }

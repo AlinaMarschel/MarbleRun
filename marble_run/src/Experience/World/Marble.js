@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { Mesh } from 'three';
 import Experience from "../Experience.js";
 
 export default class Marble {
@@ -8,16 +9,16 @@ export default class Marble {
 
         // Marble Settings
         this.color = { color: 0xffff00 }
-        this.radius = 1
+        this.radius = document.querySelector('#slider').value
         this.mass = 5
         this.velocity = 0.98
         this.startPositionX = 0
         this.startPositionY = 3
-
-        this.sphere = new THREE.Mesh()
+        
+        this.marble = new THREE.Mesh()
 
         this.marbleArray = []
-        this.onClick()
+        this.createSphere()
         this.update()
     }
 
@@ -29,24 +30,13 @@ export default class Marble {
 
         sphere.position.x = this.startPositionX
         sphere.position.y = this.startPositionY
-
-        this.marbleArray.push(sphere)
+        
         this.scene.add(sphere)
-    }
-
-    onClick() {
-        const button = document.querySelector('.create_marble')
-
-        button.addEventListener('click', () => {
-            this.createSphere()
-        })
+        
     }
 
     update() {
-        for (let item of this.marbleArray) {
-            if (item.position.y)
-                item.position.y -= this.velocity
-        }
+        this.marbleArray.forEach((marble) => marble.update())
     }
 }
 

@@ -23,6 +23,12 @@ body {
 .inner-gui-container {
     margin-left: 20px ;
 }
+
+.gui-inner-container {
+    position: relative;
+}
+
+
 .webgl {
     position: fixed;
     top: 0;
@@ -46,18 +52,13 @@ body {
     height: 7px;
     outline: none;
     border-radius:3px ;
-    
+    transform: translateY(50px);
 }
 
+#selector {
+    margin: 10px 20px;
+}
 
-/* #selector {
-    height: 104px;
-    width: 48px;
-    position: absolute;
-    bottom: 70%;
-    left: 50px;
-    z-index: 2;
-} */
 
 /* .SelectBtn {
     height: 48px;
