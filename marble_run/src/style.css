@@ -18,6 +18,9 @@ body {
     z-index: 100;
 }
 
+.inner-gui-container {
+    margin:10px ;
+}
 .webgl {
     position: fixed;
     top: 0;
@@ -27,44 +30,39 @@ body {
 }
 
 #murmelerstellen {
-    margin: 10px;
+    width: 50%;
 }
 
 #slider {
-    -webkit-appearance: none ;
-    width: 200px;
+    width: 50%;
     height: 7px;
     outline: none;
     border-radius:3px ;
-    transform: translateY(50px);
     
 }
 
 
-
-#selector {
+/* #selector {
     height: 104px;
     width: 48px;
     position: absolute;
-    bottom: 50%;
+    bottom: 70%;
     left: 50px;
-    transform: translateX(-50%);
     z-index: 2;
-}
+} */
 
-.SelectBtn {
+/* .SelectBtn {
     height: 48px;
     width: 48px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
     position: absolute;
-}
+} */
 
 #SelectValue {
     width: 48px;
     height: 48px;
-    position: absolute;
     top: 0;
     background: #ffd2;
     border-radius: 4px;

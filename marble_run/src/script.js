@@ -11,7 +11,7 @@ const experience = new Experience(document.querySelector('canvas.webgl'))
 
 
         slider.oninput = function(){
-            selector.style.left = this.value + "%";
+            selector.style.left = "Größe:" + this.value + "%";
         SelectValue.innerHTML = this.value;
 
         }

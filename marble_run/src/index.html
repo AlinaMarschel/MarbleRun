@@ -7,14 +7,17 @@
 </head>
 <body>
     <div class="gui-container">
+        <div class="inner-gui-container">
         <button type="submit" id="murmelerstellen" class="create_marble">Murmel erstellen</button>
-        <input type="range" min="1" max="10" value="5" id="slider">
-        <div id="selector">
-            <div class="SelectBtn"></div>
-            <div id="SelectValue"></div>
+            <div>
+                <input type="range" min="1" max="10" value="5" id="slider">
+                    <div id="selector">
+                        <div class="SelectBtn"></div>
+                        <div id="SelectValue"></div>
+                    </div>
+                </div>
         </div>
     </div>
-    
     <canvas class="webgl"></canvas>
 </body>
 </html>
