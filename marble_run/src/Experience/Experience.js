@@ -5,6 +5,7 @@ import Time from "./Utils/Time.js"
 import Renderer from "./Renderer.js"
 import World from "./World/World.js"
 import Resources from './Utils/Resources.js'
+import Box from './World/Box.js'
 
 let instance = null
 
@@ -34,7 +35,8 @@ export default class Experience
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.world = new World()
-
+        
+        this.floor = new Box()
 
         // Resize Event
         this.sizes.on('resize', () =>

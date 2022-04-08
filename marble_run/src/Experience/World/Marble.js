@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { Mesh } from 'three';
 import Experience from "../Experience.js";
 
 export default class Marble {
@@ -12,13 +11,12 @@ export default class Marble {
         this.radius = document.querySelector('#slider').value
         this.mass = 5
         this.velocity = 0.98
-        this.startPositionX = 0
-        this.startPositionY = 3
+        this.startPositionX = document.querySelector('#positionX').value
+        this.startPositionY = document.querySelector('#positionY').value
         
-        this.marble = new THREE.Mesh()
+        this.marble = this.createSphere()
 
         this.marbleArray = []
-        this.createSphere()
         this.update()
     }
 
@@ -32,15 +30,12 @@ export default class Marble {
         sphere.position.y = this.startPositionY
         
         this.scene.add(sphere)
-        
+
+        return sphere
     }
 
     update() {
-        for (let item of this.marbleArray) {
-            item.position.y -= this.velocity
-            console.log(item.position.y)
-        }
-        console.log('hallo??')
+        this.marble.position.y -= this.velocity
     }
 }
 
