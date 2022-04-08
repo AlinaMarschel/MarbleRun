@@ -44,7 +44,7 @@ export default class Marble {
 
     update() {
         for (let item of this.marbleArray) {
-            if (item.position.y > -10)
+            if (item.position.y)
                 item.position.y -= this.velocity
         }
     }
