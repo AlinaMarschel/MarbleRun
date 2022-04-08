@@ -23,6 +23,12 @@ body {
 .inner-gui-container {
     margin-left: 20px ;
 }
+
+.gui-inner-container {
+    position: relative;
+}
+
+
 .webgl {
     position: fixed;
     top: 0;
@@ -46,7 +52,7 @@ body {
     height: 7px;
     outline: none;
     border-radius:3px ;
-    
+    transform: translateY(50px);
 }
 
 .position-value p {
