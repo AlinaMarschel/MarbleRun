@@ -52,7 +52,6 @@ export default class Box {
 
     update() {
         //check all marbles if colliding with this box
-        //if colliding, pass this box : clear varbiable otherwise (if not done yet)
         this.marbleArray.forEach(marble => {
             if (this.box.userData.obb.intersectsSphere(marble.boundingBox)) {
                 //If intersects

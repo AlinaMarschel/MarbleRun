@@ -42,12 +42,17 @@ export default class Marble {
         // console.log(this.isCollidingWith)
         // this.marble.position.y -= this.velocity
 
-        if(this.isCollidingWith == null) {
+        if(this.isCollidingWith == null) 
+        {
             this.marble.position.y -= this.velocity
-        } else if(this.isCollidingWith.rotation.z > 0) {
+        } 
+        else if(this.isCollidingWith.rotation.z > 0) 
+        {
             this.marble.position.x -= this.velocity
             this.marble.position.y -= Math.abs(this.isCollidingWith.rotation.z)
-        } else if (this.isCollidingWith.rotation.z < 0) {
+        } 
+        else if (this.isCollidingWith.rotation.z < 0) 
+        {
             this.marble.position.x += this.velocity
             this.marble.position.y -= Math.abs(this.isCollidingWith.rotation.z)
         }

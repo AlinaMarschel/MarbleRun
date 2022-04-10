@@ -24,7 +24,6 @@ export default class World {
 
         button.addEventListener('click', () => {
             let marble = new Marble()
-
             this.marbleArray.push(marble)
         })
     }
@@ -39,14 +38,14 @@ export default class World {
         })
     }
 
-    calculateDistance(x1, y1, x2, y2) {
-        let xDistance = x2 - x1
-        let yDistance = y2 - y1
+    // calculateDistance(x1, y1, x2, y2) {
+    //     let xDistance = x2 - x1
+    //     let yDistance = y2 - y1
 
-        let distance = Math.sqrt(Math.pow(xDistance, 2) - Math.pow(yDistance, 2))
+    //     let distance = Math.sqrt(Math.pow(xDistance, 2) - Math.pow(yDistance, 2))
 
-        return distance
-    }
+    //     return distance
+    // }
 
 
 
