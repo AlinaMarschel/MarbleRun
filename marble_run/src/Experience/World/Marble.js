@@ -13,10 +13,9 @@ export default class Marble {
         this.velocity = 0.98
         this.startPositionX = document.querySelector('#positionX').value
         this.startPositionY = document.querySelector('#positionY').value
-        
-        this.marble = this.createSphere()
 
-        this.marbleArray = []
+        this.marble = this.createSphere()
+        this.createBoundingBox()
         this.update()
     }
 
@@ -34,8 +33,26 @@ export default class Marble {
         return sphere
     }
 
+    createBoundingBox()
+    {
+        this.boundingBox = new THREE.Sphere(this.marble.position, this.radius)
+    }
+
     update() {
-        this.marble.position.y -= this.velocity
+        // console.log(this.isCollidingWith)
+        // this.marble.position.y -= this.velocity
+
+        if(this.isCollidingWith == null) {
+            this.marble.position.y -= this.velocity
+        } else if(this.isCollidingWith.rotation.z > 0) {
+            this.marble.position.x -= this.velocity
+            this.marble.position.y -= Math.abs(this.isCollidingWith.rotation.z)
+        } else if (this.isCollidingWith.rotation.z < 0) {
+            this.marble.position.x += this.velocity
+            this.marble.position.y -= Math.abs(this.isCollidingWith.rotation.z)
+        }
+    
+
     }
 }
 

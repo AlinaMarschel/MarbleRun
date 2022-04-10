@@ -1,5 +1,6 @@
 import Experience from "../Experience.js";
 import Marble from './Marble.js';
+import Box from './Box'
 
 export default class World {
     constructor() {
@@ -8,12 +9,14 @@ export default class World {
         this.resources = this.experience.resources
 
         this.marbleArray = []
+        this.floorArray = []
 
-        // Brauchst du dann erstmal nicht
-        // this.resources.on('ready', () => {
-        // })
-
-        this.onClick()
+        this.resources.on('ready', () => {
+            this.floorArray.push(new Box({ x: 40, y: -120, z: 0 }, 0))
+            this.floorArray.push(new Box({ x: -20, y: -80, z: 0 }, -.2))
+            this.floorArray.push(new Box({ x: 30, y: -20, z: 0 }, .4))
+            this.onClick()
+        })
     }
 
     onClick() {
@@ -30,10 +33,13 @@ export default class World {
         this.marbleArray.forEach(marble => {
             marble.update()
         })
+
+        this.floorArray.forEach(box => {
+            box.update()
+        })
     }
 
-    calculateDistance(x1, y1, x2, y2 )
-    {
+    calculateDistance(x1, y1, x2, y2) {
         let xDistance = x2 - x1
         let yDistance = y2 - y1
 
@@ -41,4 +47,7 @@ export default class World {
 
         return distance
     }
+
+
+
 }
