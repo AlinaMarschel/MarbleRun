@@ -52,7 +52,6 @@ body {
     height: 7px;
     outline: none;
     border-radius:3px ;
-    transform: translateY(50px);
 }
 
 .position-value p {
@@ -63,6 +62,17 @@ display: inline-block;
     margin-left: 10px;
     width: 20%;
 }
+
+#angle {
+    margin-left: 10px;
+    width: 20%;
+    transform: translateX(30px);
+}
+
+.angle-value p {
+    display: inline-block;
+}
+
 /* #selector {
     height: 104px;
     width: 48px;
